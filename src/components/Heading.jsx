@@ -4,7 +4,6 @@ const Heading = (props) => {
     const { imageLink, name, symbol, Rank, usdPrice, inrPrice ,change24 }=props
     const symbolname=String(symbol).toLocaleUpperCase()
 
-    
   return (
     <div className="w-full flex flex-col gap-5 bg-white rounded-t-xl p-5">
       <div className="w-full flex flex-row gap-10">
@@ -18,9 +17,9 @@ const Heading = (props) => {
       <div className="w-full">
         <div className="flex flex-row gap-5">
             <div className="text-2xl font-semibold">${usdPrice}</div>
-            <div className={`${(Math.round(change24*100)/100)>0?"bg-green-400 text-green-600":"bg-red-300 text-red-600"} px-2 my-1 text-[0.8rem] rounded-md flex justify-center items-center`}>{Math.round(change24*100)/100} </div><span className="text-gray-400 flex items-center justify-center">&#40;24H&#41;</span>
+            <div className={`${(Math.round(change24*100)/100)>0?"bg-green-200 text-green-600":"bg-red-300 text-red-600"} px-2 my-1 text-[0.8rem] rounded-md flex flex-row justify-center gap-1 items-center`}><img src="/arrow.svg" />{Math.round(change24*100)/100} </div><span className="text-gray-400 flex items-center justify-center">&#40;24H&#41;</span>
         </div>
-        <div className=" font-medium text-[0.8rem]">{inrPrice}</div>
+        <div className=" font-medium text-[0.8rem] flex flex-row"><img src="/rupee.svg" alt="" />{inrPrice}</div>
       </div>
     </div>
   );

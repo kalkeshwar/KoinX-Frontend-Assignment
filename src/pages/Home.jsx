@@ -39,7 +39,7 @@ const Home = () => {
         setError(error.message);
       }
     })();
-  }, []);
+  }, [id]);
 
   const scrollToOverview = () => {
     overviewRef.current.scrollIntoView({ behavior: "smooth" });
