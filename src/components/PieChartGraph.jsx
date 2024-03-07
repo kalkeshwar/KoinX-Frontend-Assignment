@@ -5,13 +5,12 @@ const data = [
   { name: "Crowd Investor", value: 80, color: "#0088FE" },
   { name: "Foundation", value: 20, color: "orange" },
 ];
-// const COLORS = ["#0088FE", "#00C49F"];
 
 const PieChartGraph = () => {
   return (
-    <div className="flex flex-row items-center gap-5">
-      <ResponsiveContainer width="30%" height={200}>
-        <PieChart width={800} height={400}>
+    <div className="flex md:flex-row vsm:flex-col items-center gap-5">
+      <ResponsiveContainer width="60%" height={200}>
+        <PieChart width={800} height={400} >
           <Tooltip
             contentStyle={{ background: "white", borderRadius: "5px" }}
           />

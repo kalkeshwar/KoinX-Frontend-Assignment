@@ -2,13 +2,14 @@ import React, { useEffect, useRef, memo } from 'react';
 
 function TradingViewWidget() {
   const container = useRef();
+  const scriptRef = useRef(null);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
-    script.type = "text/javascript";
-    script.async = true;
-    script.innerHTML = `
+    scriptRef.current = document.createElement("script");
+    scriptRef.current.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+    scriptRef.current.type = "text/javascript";
+    scriptRef.current.async = true;
+    scriptRef.current.innerHTML = `
       {
         "autosize": true,
         "symbol": "BITSTAMP:BTCUSD",
@@ -25,16 +26,18 @@ function TradingViewWidget() {
         "hide_volume": true,
         "support_host": "https://www.tradingview.com"
       }`;
-    container.current.appendChild(script);
+    container.current.appendChild(scriptRef.current);
 
     // Cleanup function to remove the script when component unmounts
     return () => {
-      container.current.removeChild(script);
+      if (scriptRef.current) {
+        scriptRef.current.remove();
+      }
     };
   }, []);
 
   return (
-    <div className="tradingview-widget-container" ref={container}></div>
+    <div className="tradingview-widget-container rounded-xl" ref={container}></div>
   );
 }
 

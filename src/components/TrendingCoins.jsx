@@ -21,7 +21,7 @@ const TrendingCoins = () => {
     },[])
 
   return (
-    <div className='w-full bg-white flex justify-between overflow-hidden overflow-x-scroll no-scrollbar relative'>
+    <div className='w-full bg-white flex justify-between overflow-hidden overflow-x-scroll no-scrollbar relative '>
         <div className='w-10 h-10 border border-gray-200 rounded-full sticky top-[40%] left-10 shadow-xl'><ArrowRight className={`w-10 h-10`}/></div>
         <div className='flex flex-row gap-10 items-center justify-center p-5'>
             {
