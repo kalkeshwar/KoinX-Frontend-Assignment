@@ -8,7 +8,7 @@ const App = () => {
       <div className=' bg-gray-200 min-h-[100vh]'>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/:id' element={<Home/>}/>
+          <Route path=':id' element={<Home/>}/>
         </Routes>
       </div>
     </Router>
