@@ -4,6 +4,7 @@ const Heading = (props) => {
     const { imageLink, name, symbol, Rank, usdPrice, inrPrice ,change24 }=props
     const symbolname=String(symbol).toLocaleUpperCase()
 
+    
   return (
     <div className="w-full flex flex-col gap-5 bg-white rounded-t-xl p-5">
       <div className="w-full flex flex-row gap-10">
